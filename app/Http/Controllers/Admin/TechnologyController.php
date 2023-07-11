@@ -10,7 +10,7 @@ class TechnologyController extends Controller
 {
     private $validations = [
         "name"            => "required|string|max:50",
-        "description"     => "required|string|max:2000",
+        "description"     => "required|string|max:5000",
     ];
 
     private $validation_messages = [
