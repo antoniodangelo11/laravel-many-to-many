@@ -1,19 +1,15 @@
 @extends('admin.layouts.base')
 
 @section('contents')
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">{{ $type->name }}</th>
-                <td>{{ $type->description }}</td>
-            </tr>
-        </tbody>
-    </table>
+    
+    <h1>{{ $type->name }}</h1>
+    <p>{{ $type->description }}</p>
+
+    <h2>Latest Project in this Type</h2>
+    <ul>
+        @foreach ($type->projects as $project)
+            <li><a href="{{ route('admin.project.show', ['project' => $project]) }}">{{ $project->title }}</a></li>
+        @endforeach
+    </ul>
 
 @endsection
