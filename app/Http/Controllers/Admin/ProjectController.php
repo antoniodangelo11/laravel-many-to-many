@@ -17,7 +17,6 @@ class ProjectController extends Controller
         "author"           => "required|string|max:30",
         "collaborators"    => "nullable|string|max:150",
         "description"      => "nullable|string|max:2000",
-        "languages"        => "required|string|max:50",
         "link_github"      => "required|string|url|max:150",
         "type_id"          => "required|integer|exists:types,id",
     ];
@@ -60,7 +59,6 @@ class ProjectController extends Controller
         $newProject->author        = $data['author'];
         $newProject->collaborators = $data['collaborators'];
         $newProject->description   = $data['description'];
-        $newProject->languages     = $data['languages'];
         $newProject->link_github   = $data['link_github'];
         $newProject->type_id       = $data['type_id'];
 
@@ -98,7 +96,6 @@ class ProjectController extends Controller
         $project->author        = $data['author'];
         $project->collaborators = $data['collaborators'];
         $project->description   = $data['description'];
-        $project->languages     = $data['languages'];
         $project->link_github   = $data['link_github'];
         $project->type_id       = $data['type_id'];
         

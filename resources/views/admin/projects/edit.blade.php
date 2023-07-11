@@ -112,7 +112,7 @@
             @enderror
         </div>
 
-        <div class="mb-3">
+        {{-- <div class="mb-3">
             <label for="languages" class="form-label">Languages</label>
             <input
                 type="text"
@@ -126,7 +126,7 @@
                     {{ $message }}
                 </div>
             @enderror
-        </div>
+        </div> --}}
 
         <div class="mb-3">
             <label for="category" class="form-label">Type</label>
