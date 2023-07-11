@@ -8,16 +8,23 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class ProjectsTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
+        
         foreach(config('projects') as $objProject) {
             
-            Project::create($objProject);
+            $project = Project::create([
+                "title"         => $objProject['title'],
+                "author"        => $objProject['author'],
+                "creation_date" => $objProject['creation_date'],
+                "last_update"   => $objProject['last_update'],
+                "collaborators" => $objProject['collaborators'],
+                "description"   => $objProject['description'],
+                "link_github"   => $objProject['link_github'],
+                "type_id"       => $objProject['type_id'],
+            ]);
+
+            $project->technologies()->sync($objProject['technologies']);
         }
     }
 }

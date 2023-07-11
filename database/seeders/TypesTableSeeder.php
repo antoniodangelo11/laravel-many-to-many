@@ -8,11 +8,6 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class TypesTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         foreach(config('types') as $objType) {

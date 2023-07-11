@@ -12,6 +12,7 @@ return new class extends Migration
         Schema::create('technologies', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50);
+            $table->text('description', 3000);
         });
     }
 

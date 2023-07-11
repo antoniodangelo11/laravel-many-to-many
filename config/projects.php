@@ -8,6 +8,7 @@ return [
         "last_update"      => "2023-03-27",
         "collaborators"    => "",
         "description"      => "A clone of the spotify web interface",
+        "technologies"     => [1, 2],
         "link_github"      => "https://github.com/antoniodangelo11/html-css-spotifyweb.git",
         "type_id"          => "1"
     ],
@@ -19,6 +20,7 @@ return [
         "last_update"      => "2023-04-27",
         "collaborators"    => "",
         "description"      => "A minefield clone",
+        "technologies"     => [1, 2, 3],
         "link_github"      => "https://github.com/antoniodangelo11/js-campominato-dom.git",
         "type_id"          => "1"
     ],
@@ -30,6 +32,7 @@ return [
         "last_update"      => "2023-05-04",
         "collaborators"    => "",
         "description"      => "A Facebook clone",
+        "technologies"     => [1, 2, 3],
         "link_github"      => "https://github.com/antoniodangelo11/js-social-posts.git",
         "type_id"          => "1"
     ],
@@ -41,6 +44,7 @@ return [
         "last_update"      => "2023-05-15",
         "collaborators"    => "",
         "description"      => "A Whatsapp clone",
+        "technologies"     => [4, 5],
         "link_github"      => "https://github.com/antoniodangelo11/vue-boolzapp.git",
         "type_id"          => "1"
     ],
@@ -52,6 +56,7 @@ return [
         "last_update"      => "2023-05-31",
         "collaborators"    => "",
         "description"      => "Avada Driving clone",
+        "technologies"     => [4, 5],
         "link_github"      => "https://github.com/antoniodangelo11/proj-html-vuejs.git",
         "type_id"          => "1"
     ],
@@ -63,6 +68,7 @@ return [
         "last_update"      => "2023-07-03",
         "collaborators"    => "",
         "description"      => "A Dc Comics site homepage clone",
+        "technologies"     => [6, 7],
         "link_github"      => "https://github.com/antoniodangelo11/laravel-dc-comics.git",
         "type_id"          => "2"
     ],
@@ -75,6 +81,7 @@ return [
         "last_update"      => "2023-07-004",
         "collaborators"    => "Antonio D'Angelo, Luca Casamassima, Davide Farci, Loris Marzocchi",
         "description"      => "A invoices organizer",
+        "technologies"     => [6, 7],
         "link_github"      => "https://github.com/SimoneRicco/laravel-boolean.git",
         "type_id"          => "3"
         
