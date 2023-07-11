@@ -30,6 +30,15 @@
                         <li><a class="dropdown-item" href="{{ route('admin.type.trashed') }}">Trash</a></li>
                     </ul>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Technologies
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('admin.technology.index') }}">List</a></li>
+                        <li><a class="dropdown-item" href="{{ route('admin.technology.create') }}">Add</a></li>
+                    </ul>
+                </li>
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

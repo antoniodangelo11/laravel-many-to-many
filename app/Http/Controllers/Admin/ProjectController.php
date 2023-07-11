@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Type;
 use App\Models\Project;
+use App\Models\Technology;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 
 class ProjectController extends Controller
 {
@@ -40,7 +42,8 @@ class ProjectController extends Controller
     public function create()
     {
         $types = Type::All();
-        return view('admin.projects.create', compact('types'));
+        $technologies = Technology::all();
+        return view('admin.projects.create', compact('types', 'technologies'));
     }
 
 
@@ -64,6 +67,8 @@ class ProjectController extends Controller
 
         $newProject->save();
 
+        $newProject->technologies()->sync($data['technologies'] ?? []);
+
         // rotta di tipo get
         return to_route('admin.project.show', ['project' => $newProject]);
     }
@@ -78,7 +83,8 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $types = Type::All();
-        return view('admin.projects.edit', compact('project', 'types'));
+        $technologies = Technology::all();
+        return view('admin.projects.edit', compact('project', 'types', 'technologies'));
     }
 
 
@@ -100,6 +106,8 @@ class ProjectController extends Controller
         $project->type_id       = $data['type_id'];
         
         $project->update();
+
+        $project->technologies()->sync($data['technologies'] ?? []);
 
         // rotta di tipo get
         return to_route('admin.project.show', ['project' => $project->id]);
