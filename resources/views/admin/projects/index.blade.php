@@ -9,7 +9,7 @@
     </div>
 @endif
 
-    <table class="table table-striped">
+    <table class="table table-dark table-striped">
         <thead>
             <tr>
                 <th scope="col">Title</th>
