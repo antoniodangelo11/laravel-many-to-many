@@ -47,7 +47,7 @@
             @enderror
         </div>
 
-        <button class="btn btn-primary">Update</button>
+        <button class="btn btn-primary">Create</button>
     </form>
 
 @endsection
