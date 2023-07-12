@@ -27,6 +27,7 @@
                 <th scope="col">Collaborators</th>
                 <th scope="col">Description</th>
                 <th scope="col">Technologies</th>
+                <th scope="col">Type</th>
                 <th scope="col">Link</th>
                 <th scope="col">Actions</th>
             </tr>
@@ -45,6 +46,7 @@
                             <a href="{{route('admin.technology.show', ['technology' => $technology])}}">{{$technology->name}}</a>
                         @endforeach
                     </td>
+                    <td><a href="{{ route('admin.type.show', ['type' => $project->type]) }}">{{ $project->type->name }}</a></td>
                     <td><a href="{{ $project->link_github }}">Link</a></td>
                     
                     <td>
