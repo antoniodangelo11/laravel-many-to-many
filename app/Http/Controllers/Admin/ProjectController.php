@@ -133,11 +133,12 @@ class ProjectController extends Controller
 
     public function restore($slug)
     {
+        // Questo è l'ordine giusto e non deve essere diverso, per vedere il messaggio di ripristino
+        $project = Project::find($slug);
+        
         Project::withTrashed()->where('slug', $slug)->restore();
         $project = Project::where('slug', $slug)->firstOrFail();
-
-        $project = Project::find($slug);
-
+        
         return to_route('admin.project.trashed')->with('restore_success', $project);
     }
 
