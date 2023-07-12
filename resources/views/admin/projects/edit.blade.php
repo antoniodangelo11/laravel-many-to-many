@@ -14,7 +14,7 @@
         </div>
     @endif --}}
 
-    <form method="POST" action="{{ route('admin.project.update', ['project' => $project->id]) }}" novalidate>
+    <form method="POST" action="{{ route('admin.project.update', ['project' => $project]) }}" novalidate>
         @csrf
         @method('put')
 
