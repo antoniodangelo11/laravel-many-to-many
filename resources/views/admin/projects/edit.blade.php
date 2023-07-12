@@ -114,7 +114,7 @@
 
         <div class="mb-3">
             <h3>Technologies</h3>
-            @foreach($technologies as $technology)
+            @foreach ($technologies as $technology)
                 <div class="mb-3 form-check">
                     <input
                         type="checkbox"

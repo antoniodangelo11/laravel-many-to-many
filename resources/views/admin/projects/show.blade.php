@@ -23,7 +23,11 @@
                 <td>{{ $project->last_update }}</td>
                 <td>{{ $project->collaborators }}</td>
                 <td>{{ $project->description }}</td>
-                <td><a href="">{{ implode(', ', $project->technologies->pluck('name')->all()) }}</a></td>
+                <td>
+                    @foreach ($project->technologies as $technology)
+                        <a href="{{route('admin.technology.show', ['technology' => $technology])}}">{{$technology->name}}</a>
+                    @endforeach
+                </td>
                 <td><a href="{{ route('admin.type.show', ['type' => $project->type]) }}">{{ $project->type->name }}</a></td>
                 <td><a href="{{ $project->link_github }}">Link</a></td>
             </tr>

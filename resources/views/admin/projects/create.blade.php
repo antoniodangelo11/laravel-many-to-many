@@ -110,7 +110,7 @@
                 </div>
             @enderror
         </div>
-
+        
         <div class="mb-3">
             <h3>Technologies</h3>
             @foreach($technologies as $technology)
@@ -119,7 +119,7 @@
                         type="checkbox"
                         class="form-check-input"
                         id="technology{{ $technology->id }}"
-                        name="technology[]"
+                        name="technologies[]"
                         value="{{ $technology->id }}"
                         @if (in_array($technology->id, old('technologies') ?: [])) checked @endif
                     >
