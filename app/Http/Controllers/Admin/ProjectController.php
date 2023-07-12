@@ -153,7 +153,7 @@ class ProjectController extends Controller
     {
         $project = Project::withTrashed()->find($slug);
 
-        // se ho il trashed lo inserisco nel harddelete
+        // se ho il trashed il detach lo inserisco nel harddelete
         $project->technologies()->detach();
         $project->forceDelete();
         return to_route('admin.project.trashed')->with('delete_success', $project);
