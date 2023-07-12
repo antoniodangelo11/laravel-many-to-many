@@ -26,8 +26,6 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('admin.type.index') }}">List</a></li>
                         <li><a class="dropdown-item" href="{{ route('admin.type.create') }}">Add</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="{{ route('admin.type.trashed') }}">Trash</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">

@@ -81,32 +81,14 @@ class TypeController extends Controller
 
     public function destroy(Type $type)
     {
+
+        foreach ($type->projects as $project) {
+            $project->type_id = 1;
+            $project->update();
+        }
+
         $type->delete();
 
         return to_route('admin.type.index')->with('delete_success', $type);
-    }
-
-    public function restore($id)
-    {
-        Type::withTrashed()->where('id', $id)->restore();
-
-        $type = Type::find($id);
-
-        return to_route('admin.type.trashed')->with('restore_success', $type);
-    }
-
-    public function trashed()
-    {
-        $trashedTypes = Type::onlyTrashed()->paginate(5);
-
-        return view('admin.types.trashed', compact('trashedTypes'));
-    }
-
-    public function harddelete($id)
-    {
-        $type = Type::withTrashed()->find($id);
-        $type->forceDelete();
-
-        return to_route('admin.type.trashed')->with('delete_success', $type);
     }
 }

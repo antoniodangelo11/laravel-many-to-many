@@ -26,8 +26,14 @@
                     <td>
                         <a class="btn btn-primary" href="{{ route('admin.type.show', ['type' => $type->id]) }}">View</a>
                         <a class="btn btn-warning" href="{{ route('admin.type.edit', ['type' => $type->id]) }}">Edit</a>
-                        <button type="button" class="btn btn-danger js-delete" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="{{ $type->id }}">
-                        Delete
+                        <button 
+                            type="button" 
+                            class="btn btn-danger js-delete" 
+                            data-bs-toggle="modal" 
+                            data-bs-target="#deleteModal" 
+                            data-id="{{ $type->id }}"
+                        >
+                            Delete
                         </button>
                     </td>
                 </tr>
