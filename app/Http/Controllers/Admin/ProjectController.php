@@ -36,7 +36,7 @@ class ProjectController extends Controller
 
     public function index()
     {
-        $projects = Project::paginate(4);
+        $projects = Project::all();
 
         return view('admin.projects.index', compact('projects'));
     }
@@ -122,7 +122,6 @@ class ProjectController extends Controller
 
         // aggiornare i dati nel db
         $project->title         = $data['title'];
-        $project->url_image     = $data['url_image'];
         $project->creation_date = $data['creation_date'];
         $project->last_update   = $data['last_update'];
         $project->author        = $data['author'];
@@ -163,7 +162,7 @@ class ProjectController extends Controller
 
     public function trashed()
     {
-        $trashedProjects = Project::onlyTrashed()->paginate(5);
+        $trashedProjects = Project::onlyTrashed()->all();
 
         return view('admin.projects.trashed', compact('trashedProjects'));
     }
