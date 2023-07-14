@@ -1,11 +1,11 @@
 <section class="space-y-6">
     <header>
-        <h2 class="text-lg font-medium text-gray-900">
-            {{ __('Delete Account') }}
+        <h2 class="text-lg font-medium text-gray-900 mt-2">
+            Delete Account
         </h2>
 
-        <p class="mt-1 text-sm text-gray-600">
-            {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.') }}
+        <p class="mt-1 text-sm text-gray-600 mt-2">
+            Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.
         </p>
     </header>
 
@@ -19,37 +19,15 @@
                 @csrf
                 @method('delete')
 
-                <h2 class="modal-title text-lg font-medium text-gray-900" id="confirm-user-deletion-label">
-                    {{ __('Are you sure you want to delete your account?') }}
-                </h2>
-
-                <p class="mt-1 text-sm text-gray-600">
-                    {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.') }}
-                </p>
-
-                <div class="mt-6">
-                    <label for="password" class="visually-hidden">{{ __('Password') }}</label>
-
-                    <input
-                        id="password"
-                        name="password"
-                        type="password"
-                        class="form-control"
-                        placeholder="{{ __('Password') }}"
-                    />
-
-                    <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
+                <div class="mb-3">
+                    <label for="password">Password</label>
+                    <input class="mt-2" type="password" id="password" name="password">
+                    @error('password')
+                        {{ $message }}
+                    @enderror
                 </div>
 
-                <div class="mt-6 d-flex justify-content-end">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        {{ __('Cancel') }}
-                    </button>
-
-                    <button type="submit" class="btn btn-danger ml-3">
-                        {{ __('Delete Account') }}
-                    </button>
-                </div>
+                <button class="btn btn-danger">Delete Account</button>
             </form>
         </div>
     </div>

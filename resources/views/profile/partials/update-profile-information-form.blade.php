@@ -5,6 +5,7 @@
     <form action="{{ route('admin.profile.update') }}" method="post">
         @csrf
         @method('PATCH')
+        
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}">
@@ -13,6 +14,7 @@
                 @error('name') {{ $message }} @enderror
             </div>
         </div>
+        
         <div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
@@ -39,6 +41,7 @@
                 </div>
             @endif
         </div>
+        
         <div class="d-flex align-items-center gap-4">
             <button class="btn btn-primary">{{ __('Save') }}</button>
         

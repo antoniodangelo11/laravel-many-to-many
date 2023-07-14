@@ -82,7 +82,7 @@
     </div>
 
     {{-- Bootstrap paginator --}}
-    {{-- {{ $projects->links() }} --}}
+    {{ $projects->links() }}
 
 @endsection
 

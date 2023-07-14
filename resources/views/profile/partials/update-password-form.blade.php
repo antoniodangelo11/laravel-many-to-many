@@ -4,21 +4,30 @@
 
     <div class="mb-3">
         <label for="password" class="form-label">Current Password</label>
-        <input type="password" class="form-control" id="password" name="password">
-        {{-- <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" /> --}}
+        <input class="mt-2" type="password" class="form-control" id="password" name="current_password">
+        @error('current_password')
+            {{ $message }}
+        @enderror
     </div>
+    
     <div class="mb-3">
         <label for="password" class="form-label">New Password</label>
-        <input type="password" class="form-control" id="password" name="password">
-        {{-- <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" /> --}}
+        <input class="mt-2" type="password" class="form-control" id="password" name="password">
+        @error('password')
+            {{ $message }}
+        @enderror
     </div>
+    
     <div class="mb-3">
         <label for="password" class="form-label">Password Confirmation</label>
-        <input type="password" class="form-control" id="password" name="password_confirmation">
-        {{-- <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2" /> --}}
+        <input class="mt-2" type="password" class="form-control" id="password" name="password_confirmation">
+        @error('password_confirmation')
+            {{ $message }}
+        @enderror
     </div>
+    
     <div class="d-flex align-items-center gap-4">
-        <button class="btn btn-primary">{{ __('Save') }}</button>
+        <button class="btn btn-primary">{{ 'Save' }}</button>
     
         @if (session('status') === 'password-updated')
             <p
